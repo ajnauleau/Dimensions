@@ -1,0 +1,21 @@
+{
+  "name": "dimensions",
+  "version": "1.0.0",
+  "description": "\"Imagine Anything\"",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ajnauleau <antoine@nauleau.io>",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "hbs": "^4.1.1",
+    "mongoose": "^5.9.9",
+    "morgan": "^1.10.0"
+  },
+  "engines": {
+    "node": "^8.x"
+  }
+}
