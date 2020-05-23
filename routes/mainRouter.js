@@ -32,6 +32,7 @@ mainRouter.get('/list', (req, res) => {
             arrayOfUsers.push([user.name, user.email]);
         }
     });
+
     res.render('list.hbs', { users: arrayOfUsers})
 })
 
