@@ -25,7 +25,6 @@ mainRouter.post('/first', (req, res) => {
            res.send(user);
         })
     console.log('reached');
-    res.send(user);
 });
 
 mainRouter.get('/list', (req, res) => {
