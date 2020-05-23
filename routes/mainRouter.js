@@ -18,7 +18,10 @@ mainRouter.post('/first', (req, res) => {
     console.log(req.body);
     var user = new User(req.body);
     user.save()
-        .then((user) => {
+        .then((err, user) => {
+            if (err) {
+                console.log('Error:', err)
+            }
            res.send(user);
         })
 });
