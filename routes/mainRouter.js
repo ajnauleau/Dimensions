@@ -22,6 +22,7 @@ mainRouter.post('/first', (req, res) => {
             if (err) {
                 console.log('Error:', err)
             }
+            console.log('User', user)
            res.send(user);
         })
 });
