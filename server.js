@@ -8,7 +8,7 @@ const exphbs = require("express-handlebars");
 const app = express();
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://nameless-meadow-q7gzqtvv43djru635ylf9hnq.herokudns.com/dimensions');
+mongoose.connect('mongodb://ourdimensions.com/dimensions');
 
 app.use(cors());
 app.use(morgan("tiny"));
