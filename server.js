@@ -10,7 +10,7 @@ require('dotenv').config();
 const app = express();
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://nameless-meadow-q7gzqtvv43djru635ylf9hnq.herokudns.com/dimensions', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost/dimensions', { useNewUrlParser: true });
 
 app.use(cors());
 app.use(morgan("tiny"));
