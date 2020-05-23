@@ -10,7 +10,7 @@ require('dotenv').config();
 const app = express();
 
 const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGODB_URI || 'mongodb:nameless-meadow-q7gzqtvv43djru635ylf9hnq.herokudns.com:39897/dimensions');
+mongoose.connect('mongodb:nameless-meadow-q7gzqtvv43djru635ylf9hnq.herokudns.com:39897/dimensions');
 
 app.use(cors());
 app.use(morgan("tiny"));
