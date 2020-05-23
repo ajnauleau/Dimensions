@@ -10,7 +10,7 @@ require('dotenv').config();
 const app = express();
 
 const MongoClient = require("mongodb").MongoClient;
-const client = await new MongoClient(process.env.MONGODB_URI,{ useNewUrlParser: true});
+const client = new MongoClient(process.env.MONGODB_URI,{ useNewUrlParser: true});
 client.connect();
 
 const mongoose = require('mongoose');
