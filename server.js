@@ -10,7 +10,7 @@ require('dotenv').config();
 const app = express();
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/dimensions', { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/dimensions', { useNewUrlParser: true });
 
 app.use(cors());
 app.use(morgan("tiny"));
