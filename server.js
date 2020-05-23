@@ -10,7 +10,7 @@ require('dotenv').config();
 const app = express();
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://cubed-oviraptor-3kkn7f9heblh4c35y4zz9zwu.herokudns.com/dimensions' { useNewUrlParser: true });
+mongoose.connect('mongodb://cubed-oviraptor-3kkn7f9heblh4c35y4zz9zwu.herokudns.com/dimensions', { useNewUrlParser: true });
 
 app.use(cors());
 app.use(morgan("tiny"));
