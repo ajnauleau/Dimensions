@@ -9,12 +9,8 @@ require('dotenv').config();
 
 const app = express();
 
-const MongoClient = require("mongodb").MongoClient;
-const client = new MongoClient(process.env.MONGODB_URI,{ useNewUrlParser: true});
-client.connect();
-
 const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGODB_URI || 'mongodb:adjacent-hare-ykn44mnr191gjhhtuggx5pmq.herokudns.com/dimensions?authSource=admin', { useNewUrlParser: true });
+mongoose.connect('mongodb://nameless-meadow-q7gzqtvv43djru635ylf9hnq.herokudns.com/dimensions', { useNewUrlParser: true });
 
 app.use(cors());
 app.use(morgan("tiny"));
