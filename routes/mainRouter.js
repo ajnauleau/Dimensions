@@ -36,11 +36,13 @@ mainRouter.get('/list', (req, res) => {
             console.log('user', user)
             arrayOfUsers.push([user.name, user.email]);
         }
+    }).then(() => {
+        res.render('list.hbs', { users: arrayOfUsers})
     });
 
     console.log('array', arrayOfUsers)
 
-    res.render('list.hbs', { users: arrayOfUsers})
+
 })
 
 mainRouter.get('/more', (req, res) => {
