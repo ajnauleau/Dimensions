@@ -9,6 +9,10 @@ require('dotenv').config();
 
 const app = express();
 
+const MongoClient = require("mongodb").MongoClient;
+const client = await new MongoClient(process.env.MONGODB_URI,{ useNewUrlParser: true});
+client.connect();
+
 const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGODB_URI || 'mongodb:adjacent-hare-ykn44mnr191gjhhtuggx5pmq.herokudns.com/dimensions?authSource=admin', { useNewUrlParser: true });
 
