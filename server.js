@@ -10,7 +10,17 @@ require('dotenv').config();
 const app = express();
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/dimensions', { useNewUrlParser: true });
+
+var MONGODB_URI = process.env.MONGOLAB_YELLOW_URI || "mongodb://cubed-oviraptor-3kkn7f9heblh4c35y4zz9zwu.herokudns.com/dimensions?authSource=admin";
+const options = {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+    family: 4 // Use IPv4, skip trying IPv6
+};
+
+mongoose.connect(MONGODB_URI,options)
+
 
 app.use(cors());
 app.use(morgan("tiny"));
