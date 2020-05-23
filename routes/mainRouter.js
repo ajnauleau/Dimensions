@@ -24,6 +24,7 @@ mainRouter.post('/first', (req, res) => {
             }
            res.send(user);
         })
+    console.log('reached');
     res.send(user);
 });
 
@@ -33,6 +34,7 @@ mainRouter.get('/list', (req, res) => {
 
     User.find({}, (err, data) => {
         for(let user of data) {
+            console.log('user', user)
             arrayOfUsers.push([user.name, user.email]);
         }
     });
