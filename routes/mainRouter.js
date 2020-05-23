@@ -23,6 +23,18 @@ mainRouter.post('/first', (req, res) => {
         })
 });
 
+mainRouter.get('/list', (req, res) => {
+
+    var arrayOfUsers = [];
+
+    User.find({}, (err, data) => {
+        for(let user of data) {
+            arrayOfUsers.push([user.name, user.email]);
+        }
+    });
+    res.render('list.hbs', { users: arrayOfUsers})
+})
+
 mainRouter.get('/more', (req, res) => {
     res.render('more.hbs', { });
 });
