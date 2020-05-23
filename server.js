@@ -5,10 +5,12 @@ const cors = require("cors");
 const hbs = require("hbs");
 const exphbs = require("express-handlebars");
 
+require('dotenv').config();
+
 const app = express();
 
 const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://nameless-meadow-q7gzqtvv43djru635ylf9hnq.herokudns.com/dimensions');
 
 app.use(cors());
 app.use(morgan("tiny"));
