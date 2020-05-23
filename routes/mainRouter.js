@@ -22,7 +22,6 @@ mainRouter.post('/first', (req, res) => {
             if (err) {
                 console.log('Error:', err)
             }
-            console.log('User', user)
            res.send(user);
         })
     res.send(user);
@@ -37,6 +36,8 @@ mainRouter.get('/list', (req, res) => {
             arrayOfUsers.push([user.name, user.email]);
         }
     });
+
+    console.log('array', arrayOfUsers)
 
     res.render('list.hbs', { users: arrayOfUsers})
 })
