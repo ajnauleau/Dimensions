@@ -9,6 +9,7 @@
   "author": "ajnauleau <antoine@nauleau.io>",
   "license": "ISC",
   "dependencies": {
+    "@stripe/stripe-js": "^1.9.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "env": "0.0.2",

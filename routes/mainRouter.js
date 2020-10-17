@@ -49,6 +49,22 @@ mainRouter.get('/more', (req, res) => {
     res.render('more.hbs', { });
 });
 
+var plan = {
+    id: 1,
+    amount: 1,
+    name: 'Dimensions Subscription',
+    interval: '30 day',
+    interval_count: 12
+}
+
+var product = {
+    name: 'Dimensions Subscription'
+}
+
+mainRouter.get('/subscribe', (req, res) => {
+    res.render('subscribe.hbs', {plan, product});
+});
+
 mainRouter.get('/robots.txt', (req, res) => {
     res.redirect('/pages/robots.txt');
 });
