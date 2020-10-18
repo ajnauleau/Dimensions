@@ -1,7 +1,7 @@
 const express = require("express");
 const mainRouter = express.Router();
 const bodyParser = require("body-parser");
-
+const STRIPE_API = require('../api/stripe-functions.js');
 const User = require('../models/user');
 
 mainRouter.use(bodyParser.json());
@@ -50,10 +50,10 @@ mainRouter.get('/more', (req, res) => {
 });
 
 var plan = {
-    id: 1,
+    id: "plan_IDzFtiLVkpT2MO",
     amount: 1,
     name: 'Dimensions Subscription',
-    interval: '30 day',
+    interval: 'month',
     interval_count: 12
 }
 
@@ -63,6 +63,26 @@ var product = {
 
 mainRouter.get('/subscribe', (req, res) => {
     res.render('subscribe.hbs', {plan, product});
+});
+
+mainRouter.post('/processPayment', (req, res) => {
+    var product = {
+        name: req.body.productName
+    };
+
+    var plan = {
+        id: req.body.planId,
+        name: req.body.planName,
+        amount: req.body.planAmount,
+        interval: req.body.planInterval,
+        interval_count: req.body.planIntervalCount
+    }
+
+    STRIPE_API.createCustomerAndSubscription(req.body).then(() => {
+        res.render('subscribe.hbs', {product: product, plan: plan, success: true});
+    }).catch(err => {
+        res.render('subscribe.hbs', {product: product, plan: plan, error: true});
+    });
 });
 
 mainRouter.get('/robots.txt', (req, res) => {

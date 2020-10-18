@@ -1,0 +1,54 @@
+
+{
+  "id": "prod_IDz06OUBM25Cde",
+  "object": "product",
+  "active": true,
+  "attributes": [
+
+  ],
+  "created": 1603008881,
+  "description": null,
+  "images": [
+
+  ],
+  "livemode": false,
+  "metadata": {
+  },
+  "name": "Dimensions Monthly Subscription",
+  "statement_descriptor": null,
+  "type": "service",
+  "unit_label": null,
+  "updated": 1603008881
+}
+
+{
+  "id": "plan_IDzFtiLVkpT2MO",
+  "object": "plan",
+  "active": true,
+  "aggregate_usage": null,
+  "amount": 4000,
+  "amount_decimal": "4000",
+  "billing_scheme": "per_unit",
+  "created": 1603009804,
+  "currency": "usd",
+  "interval": "month",
+  "interval_count": 1,
+  "livemode": false,
+  "metadata": {
+  },
+  "nickname": null,
+  "product": "prod_IDz06OUBM25Cde",
+  "tiers": null,
+  "tiers_mode": null,
+  "transform_usage": null,
+  "trial_period_days": null,
+  "usage_type": "licensed"
+}
+
+
+curl https://api.stripe.com/v1/plans \
+  -u sk_test_fBeE25VDRWfhR9fLVkR08cUw00Q50e2z1V \
+  -d amount=4000 \
+  -d currency=usd \
+  -d interval=month \
+  -d product=prod_IDz06OUBM25Cde

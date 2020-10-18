@@ -140,6 +140,12 @@ a:hover {
     padding: 26px 38px;
 }
 
+.payment-box {
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 2rem;
+}
+
 .StripeElement {
     box-sizing: border-box;
     height: 40px;

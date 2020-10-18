@@ -10,15 +10,18 @@
   "license": "ISC",
   "dependencies": {
     "@stripe/stripe-js": "^1.9.0",
+    "bl": "^4.0.3",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "env": "0.0.2",
     "express": "^4.17.1",
     "express-handlebars": "^4.0.3",
     "hbs": "^4.1.1",
+    "html": "^1.0.0",
     "mongodb": "^3.5.7",
     "mongoose": "^5.9.15",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "stripe": "^8.114.0"
   },
   "engines": {
     "node": "^8.x"
