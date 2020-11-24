@@ -112,6 +112,7 @@ a:hover {
 
 .more {
     line-height: 1.5em;
+    margin-bottom: 180px;
 }
 
 .more p {
@@ -127,6 +128,7 @@ a:hover {
 }
 
 .footer {
+    display: none;
     color: #888888;
     position: fixed;
     height: 90px;
